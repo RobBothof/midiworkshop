@@ -1,15 +1,15 @@
 #include <Bounce.h>
-
+const int buttonpin = 0;
 const int midiChannel = 1;
 const int faderMidiCtrlNumber = 11; // 11 = volume/expression
 
 int oldFaderValue = -1;
 int newFaderValue = -1;
 elapsedMillis elapsedTime = 0;
-Bounce button0 = Bounce(0, 5);
+Bounce button0 = Bounce(buttonpin, 5);
 
 void setup() {
-    pinMode(0, INPUT_PULLUP);
+    pinMode(buttonpin, INPUT_PULLUP);
 }
 
 void loop() {
